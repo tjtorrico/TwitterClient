@@ -6,6 +6,10 @@ import android.support.v4.app.Fragment;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 
+import net.tjtorrico.twitterclient.hashtags.di.DaggerHashtagsComponent;
+import net.tjtorrico.twitterclient.hashtags.di.HashtagsComponent;
+import net.tjtorrico.twitterclient.hashtags.di.HashtagsModule;
+import net.tjtorrico.twitterclient.hashtags.ui.HashtagsView;
 import net.tjtorrico.twitterclient.images.di.DaggerImagesComponent;
 import net.tjtorrico.twitterclient.images.di.ImagesComponent;
 import net.tjtorrico.twitterclient.images.di.ImagesModule;
@@ -35,6 +39,14 @@ public class TwitterClientApp extends Application {
                 .builder()
                 .libsModule(new LibsModule(fragment))
                 .imagesModule(new ImagesModule(view, clickListener))
+                .build();
+    }
+
+    public HashtagsComponent getHastagsComponent(HashtagsView view, net.tjtorrico.twitterclient.hashtags.ui.adapters.OnItemClickListener clickListener){
+        return DaggerHashtagsComponent
+                .builder()
+                .libsModule(new LibsModule(null))
+                .hashtagsModule(new HashtagsModule(view, clickListener))
                 .build();
     }
 }

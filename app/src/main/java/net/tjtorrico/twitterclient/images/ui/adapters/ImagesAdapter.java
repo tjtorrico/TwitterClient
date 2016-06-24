@@ -65,7 +65,7 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.ViewHolder
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-            this.view = itemView;
+            view = itemView;
         }
 
         public void setOnClickListener(final Image image, final OnItemClickListener listener){
