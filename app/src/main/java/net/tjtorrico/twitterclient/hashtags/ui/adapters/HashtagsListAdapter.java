@@ -39,7 +39,6 @@ public class HashtagsListAdapter extends RecyclerView.Adapter<HashtagsListAdapte
         return items.size();
     }
 
-
     static class ViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.txtHashtag)
         TextView txtHashtag;

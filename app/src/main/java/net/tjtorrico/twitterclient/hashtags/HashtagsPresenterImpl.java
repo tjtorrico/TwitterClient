@@ -5,6 +5,8 @@ import net.tjtorrico.twitterclient.hashtags.events.HashtagsEvent;
 import net.tjtorrico.twitterclient.hashtags.ui.HashtagsView;
 import net.tjtorrico.twitterclient.lib.base.EventBus;
 
+import org.greenrobot.eventbus.Subscribe;
+
 import java.util.List;
 
 /**
@@ -38,7 +40,7 @@ public class HashtagsPresenterImpl implements HashtagsPresenter {
 
     @Override
     public void getHashtagTweets() {
-        if (view != null){
+        if (view != null) {
             view.hideList();
             view.showProgress();
         }
@@ -46,6 +48,7 @@ public class HashtagsPresenterImpl implements HashtagsPresenter {
     }
 
     @Override
+    @Subscribe
     public void onEventMainThread(HashtagsEvent event) {
         String errorMsg = event.getError();
         if (view != null) {

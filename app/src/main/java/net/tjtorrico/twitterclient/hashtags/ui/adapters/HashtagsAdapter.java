@@ -61,7 +61,7 @@ public class HashtagsAdapter extends RecyclerView.Adapter<HashtagsAdapter.ViewHo
         RecyclerView recyclerView;
 
         private View view;
-        private ArrayList<String> items;
+        private List<String> items;
         private HashtagsListAdapter adapter;
 
         public ViewHolder(View itemView, Context context) {
@@ -71,6 +71,7 @@ public class HashtagsAdapter extends RecyclerView.Adapter<HashtagsAdapter.ViewHo
 
             items = new ArrayList<String>();
             adapter = new HashtagsListAdapter(items);
+
             CustomGridLayoutManager layoutManager = new CustomGridLayoutManager(context, 3);
             recyclerView.setLayoutManager(layoutManager);
             recyclerView.setAdapter(adapter);

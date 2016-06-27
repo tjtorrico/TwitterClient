@@ -43,9 +43,9 @@ public class HashtagsFragment extends Fragment implements HashtagsView, OnItemCl
     FrameLayout viewPager;
 
     @Inject
-    HashtagsPresenter presenter;
-    @Inject
     HashtagsAdapter adapter;
+    @Inject
+    HashtagsPresenter presenter;
 
     public HashtagsFragment() {
         // Required empty public constructor
@@ -57,6 +57,7 @@ public class HashtagsFragment extends Fragment implements HashtagsView, OnItemCl
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_content, container, false);
+
         ButterKnife.bind(this, view);
         setupInjection();
         setupRecyclerView();
@@ -84,8 +85,8 @@ public class HashtagsFragment extends Fragment implements HashtagsView, OnItemCl
 
     @Override
     public void onPause() {
-        presenter.onPause();
         super.onPause();
+        presenter.onPause();
     }
 
     @Override

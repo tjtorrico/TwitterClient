@@ -22,7 +22,6 @@ import io.fabric.sdk.android.Fabric;
  * Created by TJT on 24/06/2016.
  */
 public class TwitterClientApp extends Application {
-
     @Override
     public void onCreate() {
         super.onCreate();
